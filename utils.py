@@ -21,7 +21,6 @@ def get_currency_rates():
         url = f"https://api.apilayer.com/exchangerates_data/latest?symbols=RUB&base={cur}"
         response = requests.get(url, headers=headers).json()
         currency_rates.append({"currency": cur, "rate": response.get("rates").get("RUB")})
-
     return currency_rates
 
 
@@ -47,5 +46,5 @@ def get_stock_prices():
 
 
 if __name__ == "__main__":
-    # print(get_currency_rates)
+    print(get_currency_rates())
     print(get_stock_prices())
